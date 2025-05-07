@@ -1,0 +1,792 @@
+/* General Intelligence Page Styles */
+
+/* App Container */
+.app-container {
+    display: flex;
+    height: 100vh;
+    background-color: var(--bg-color);
+}
+
+/* Left Navigation */
+.left-nav {
+    width: 240px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border-bottom: 1px solid #222;
+    margin-bottom: 10px;
+}
+
+.logo i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.logo span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    margin: 5px 0;
+}
+
+.nav-list a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}
+
+.nav-list a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.nav-list a.active {
+    color: var(--primary-color);
+    background-color: rgba(10, 132, 255, 0.1);
+}
+
+.nav-list i {
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.content-header {
+    padding: 20px;
+    border-bottom: 1px solid #222;
+}
+
+.content-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* Chat Area */
+.chat-area {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Chat Sidebar */
+.chat-sidebar {
+    width: 300px;
+    border-right: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    height: 100vh; /* Ensure full height */
+    transition: transform 0.3s ease, width 0.3s ease;
+}
+
+.chat-sidebar-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-sidebar-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.chat-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.chat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.chat-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chat-item.active {
+    background-color: rgba(10, 132, 255, 0.1);
+    border-left: 3px solid var(--primary-color);
+}
+
+.chat-item-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.chat-item-content i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.chat-title {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.chat-item-actions {
+    display: flex;
+    align-items: center;
+}
+
+.delete-chat-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    opacity: 0.6;
+}
+
+.delete-chat-btn:hover {
+    color: #ff4d4d;
+    background-color: rgba(255, 77, 77, 0.1);
+    opacity: 1;
+}
+
+.chat-item:hover .delete-chat-btn {
+    opacity: 1;
+}
+
+/* Chat Main */
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.chat-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.chat-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 40px 20px;
+    margin: auto;
+    max-width: 600px;
+}
+
+.welcome-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.welcome-message h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.welcome-message p {
+    color: var(--text-secondary);
+}
+
+/* Chat message styling */
+.message {
+    display: flex;
+    margin-bottom: 20px;
+    max-width: 80%;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.user-message {
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.ai-message {
+    margin-right: auto;
+}
+
+.message-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.user-message .message-icon {
+    background-color: var(--accent-color);
+}
+
+.message-content {
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.user-message .message-content {
+    background-color: var(--primary-color);
+    border-top-right-radius: 0;
+}
+
+.ai-message .message-content {
+    background-color: var(--card-bg);
+    border-top-left-radius: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-input-container {
+    border-top: 1px solid #222;
+    padding: 15px 20px;
+    display: flex;
+    gap: 10px;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 12px 15px;
+    border-radius: 20px;
+    background-color: #2a2a2a;
+    border: 1px solid #333;
+    color: var(--text-primary);
+    resize: none;
+    min-height: 24px;
+    max-height: 120px;
+}
+
+.send-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    border: 1px solid #333;
+    color: var(--text-primary);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .chat-sidebar {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+    
+    .left-nav {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        padding: 10px;
+        justify-content: space-between;
+    }
+    
+    .logo {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding: 0;
+    }
+    
+    .nav-list {
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav-list li {
+        margin: 0 10px;
+    }
+    
+    .chat-area {
+        flex-direction: column;
+    }
+    
+    .chat-sidebar {
+        width: 100%;
+        height: 200px;
+        border-right: none;
+        border-bottom: 1px solid #222;
+    }
+}
+
+/* Sidebar toggle button positioning based on main sidebar state */
+.chat-sidebar-toggle {
+    position: absolute;
+    top: 50%;
+    left: 550px; /* Default position when main sidebar is visible */
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 50% 50% 0;
+    width: 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001;
+    transition: left 0.3s ease;
+}
+
+/* When main sidebar is collapsed, adjust the chat sidebar toggle position */
+.app-container.sidebar-collapsed .chat-sidebar-toggle {
+    left: 370px !important; /* Use !important to override any conflicting styles */
+}
+
+/* When chat sidebar is hidden, position the toggle at the edge */
+.chat-area.sidebar-hidden .chat-sidebar-toggle {
+    left: 0;
+}
+
+/* When both main sidebar is collapsed and chat sidebar is hidden */
+.app-container.sidebar-collapsed .chat-area.sidebar-hidden .chat-sidebar-toggle {
+    left: 0;
+}
+
+.chat-sidebar-toggle i {
+    transition: transform 0.3s ease;
+}
+
+/* Ensure the sidebar has a consistent width and position */
+.chat-sidebar {
+    width: 300px;
+    position: relative;
+    transition: transform 0.3s ease, width 0.3s ease;
+    overflow: hidden;
+}
+
+/* Hide the sidebar when toggled */
+.chat-area.sidebar-hidden .chat-sidebar {
+    transform: translateX(-300px);
+    width: 0;
+}
+
+/* Ensure the main chat area expands properly */
+.chat-main {
+    flex: 1;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.chat-area.sidebar-hidden .chat-main {
+    margin-left: 24px; /* Leave space for the toggle button */
+    width: calc(100% - 24px);
+}
+
+/* Collapse chat pages button - position at bottom of sidebar */
+.collapse-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border: none;
+    border-top: 1px solid #333;
+    color: #888;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.collapse-btn:hover {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+.collapse-btn i {
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+}
+
+.collapse-btn.collapsed i {
+    transform: rotate(180deg);
+}
+
+/* Chat pages container should fill available space but leave room for the button */
+.chat-pages-container {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 40px; /* Make room for the button */
+}
+
+/* Add transition for smooth sidebar toggle */
+.chat-sidebar, .chat-main {
+    transition: all 0.3s ease;
+}
+
+/* Add typing indicator styles */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.typing-indicator span {
+    height: 8px;
+    width: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2px;
+    opacity: 0.6;
+    animation: typing 1s infinite;
+}
+
+.typing-indicator span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+}
+
+/* Improve the chat pages toggle button styling */
+.chat-pages-toggle {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--sidebar-bg);
+    border-top: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 5;
+    color: var(--text-secondary);
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chat-pages-toggle:hover {
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.chat-pages-toggle i {
+    margin-right: 8px;
+    font-size: 14px;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.chat-pages-toggle span {
+    font-size: 14px;
+}
+
+.chat-pages-toggle.collapsed i {
+    transform: rotate(180deg);
+}
+
+/* Styles for collapsed chat items */
+.chat-sidebar.pages-collapsed .chat-item {
+    height: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.chat-sidebar.pages-collapsed .chat-item.active {
+    height: auto;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    opacity: 1;
+}
+
+/* Add styles for the chat page toggle button at the right edge */
+.chat-page-toggle {
+    position: absolute;
+    top: 50%;
+    right: -24px; /* Position it at the right edge of the sidebar */
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 50% 50% 0;
+    width: 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000; /* Higher z-index to ensure it's visible */
+    transition: all 0.3s ease;
+}
+
+.chat-page-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.chat-sidebar.collapsed .chat-page-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Add styles for collapsed chat sidebar */
+.chat-sidebar.collapsed {
+    width: 0;
+    overflow: hidden;
+}
+
+.chat-sidebar.collapsed .chat-item,
+.chat-sidebar.collapsed .chat-pages-toggle {
+    display: none;
+}
+
+/* Update the chat page toggle position when sidebar is collapsed */
+.chat-sidebar.collapsed .chat-page-toggle {
+    right: auto;
+    left: 0;
+}
+
+/* Code block styling */
+.code-block-container {
+    margin: 15px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #1e1e2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-block-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+    background-color: #2d2d3a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.code-language {
+    font-size: 0.85rem;
+    color: #a6accd;
+    font-family: monospace;
+}
+
+.copy-code-btn {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #a6accd;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.copy-code-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.code-block {
+    margin: 0;
+    padding: 15px;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #e4e4e4;
+}
+
+.code-block code {
+    display: block;
+    white-space: pre;
+}
+
+/* Add proper sidebar hiding behavior */
+.chat-area.sidebar-hidden .chat-sidebar {
+    transform: translateX(-300px);
+    width: 0;
+    overflow: hidden;
+}
+
+/* Ensure the main chat area expands when sidebar is hidden */
+.chat-area.sidebar-hidden .chat-main {
+    margin-left: 24px; /* Leave space for the toggle button */
+    width: calc(100% - 24px);
+}
+
+/* Ensure the toggle button stays visible */
+.chat-area.sidebar-hidden .chat-sidebar-toggle {
+    left: 0;
+    z-index: 1001;
+} 

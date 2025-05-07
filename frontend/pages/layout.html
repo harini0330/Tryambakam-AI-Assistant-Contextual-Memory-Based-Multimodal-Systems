@@ -1,0 +1,60 @@
+<!-- This is a template for all pages to follow -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tryambakam | Advanced Intelligence System</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Sidebar Navigation - Same on all pages -->
+        <nav class="main-nav">
+            <a href="../index.html" class="nav-logo">
+                <i class="fas fa-brain"></i>
+                <span>TRYAMBAKAM</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html" class="nav-link"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                <li><a href="general.html" class="nav-link"><i class="fas fa-comments"></i> <span>General</span></a></li>
+                <li><a href="overall.html" class="nav-link"><i class="fas fa-brain"></i> <span>Overall</span></a></li>
+                <li><a href="memory.html" class="nav-link"><i class="fas fa-database"></i> <span>Memory</span></a></li>
+                <li><a href="experts.html" class="nav-link"><i class="fas fa-user-md"></i> <span>Experts</span></a></li>
+                <li><a href="vision.html" class="nav-link"><i class="fas fa-eye"></i> <span>Vision</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Content Area - Different for each page -->
+        <main class="content">
+            <!-- Page specific content goes here -->
+        </main>
+    </div>
+
+    <!-- Page specific scripts -->
+    <script>
+        // Highlight active page in navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get current page filename
+            const currentPage = window.location.pathname.split('/').pop();
+            
+            // Find matching nav link and add active class
+            document.querySelectorAll('.nav-link').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === currentPage) {
+                    link.classList.add('active');
+                }
+                
+                // Special case for home page
+                if (currentPage === '' || currentPage === 'index.html') {
+                    if (href === '../index.html') {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,83 @@
+[
+  {
+    "timestamp": "2025-03-06T00:18:31.173107",
+    "title": "tryambakamtesting",
+    "human": "Chat started",
+    "ai": "Welcome to tryambakamtesting! How can I help you today?"
+  },
+  {
+    "timestamp": "2025-03-06T00:38:26.064324",
+    "human": "hi what is u r name ",
+    "ai": "This is a placeholder response to: hi what is u r name "
+  },
+  {
+    "timestamp": "2025-03-06T03:17:58.689151",
+    "human": "what is u r name ",
+    "ai": "My name is Tryambakam. I'm an AI assistant, here to help answer your questions and provide assistance. Nice to meet you!"
+  },
+  {
+    "timestamp": "2025-03-06T08:37:28.672238",
+    "human": "my name is Nithya santhosh",
+    "ai": "Nice to meet you, Nithya Santhosh! It's great to have you here. How's your day going so far? Is there something I can help you with or would you like to just chat?"
+  },
+  {
+    "timestamp": "2025-03-06T08:37:37.899077",
+    "human": "what is my name ",
+    "ai": "Your name is Nithya Santhosh!"
+  },
+  {
+    "timestamp": "2025-03-06T08:37:47.459069",
+    "human": "goood ",
+    "ai": "I'm glad I could remember your name correctly, Nithya Santhosh! If you want to chat or need help with anything, feel free to ask!"
+  },
+  {
+    "timestamp": "2025-03-06T08:38:07.509660",
+    "human": "can u give me python code for the addition of numbers ",
+    "ai": "Here's a simple Python code for adding two numbers:\n\n```\n# Function to add two numbers\ndef add_numbers(num1, num2):\n  return num1 + num2\n\n# Get the numbers from the user\nnum1 = float(input(\"Enter the first number: \"))\nnum2 = float(input(\"Enter the second number: \"))\n\n# Call the function and print the result\nresult = add_numbers(num1, num2)\nprint(\"The sum of\", num1, \"and\", num2, \"is\", result)\n```\n\nYou can also use this code to add more than two numbers by modifying the function to accept a variable number of arguments. Here's an example:\n\n```\n# Function to add multiple numbers\ndef add_numbers(*args):\n  return sum(args)\n\n# Get the numbers from the user\nnumbers = input(\"Enter the numbers separated by space: \")\nnumbers = [float(num) for num in numbers.split()]\n\n# Call the function and print the result\nresult = add_numbers(*numbers)\nprint(\"The sum of the numbers is\", result)\n```\n\nLet me know if you have any questions or need further clarification!"
+  },
+  {
+    "timestamp": "2025-03-11T20:05:58.937181",
+    "human": "what is my name ",
+    "ai": "Your name is Nithya Santhosh!"
+  },
+  {
+    "timestamp": "2025-03-14T15:05:35.179247",
+    "human": "what is u r name ",
+    "ai": "My name is Tryambakam. I'm an AI assistant, here to help answer your questions and provide assistance."
+  },
+  {
+    "timestamp": "2025-03-14T15:05:48.018549",
+    "human": "okay what is my name ",
+    "ai": "I remember! Your name is Nithya Santhosh!"
+  },
+  {
+    "timestamp": "2025-03-14T15:06:15.300049",
+    "human": "okay what is u r name ",
+    "ai": "Again! My name is Tryambakam, your friendly AI assistant!"
+  },
+  {
+    "timestamp": "2025-03-27T08:50:14.452144",
+    "human": "my name is niithya santhosh ",
+    "ai": "Wait a minute! I think you made a tiny typo, Nithya! You meant to say \"Nithya Santhosh\", right? Not \"Niithya\"?"
+  },
+  {
+    "timestamp": "2025-03-27T08:50:42.852440",
+    "human": "what is my name",
+    "ai": "I'll get it right this time! Your name is Nithya Santhosh!"
+  },
+  {
+    "timestamp": "2025-04-04T19:28:21.584061",
+    "human": "what is my name",
+    "ai": "Consistency is key! Your name is still Nithya Santhosh!"
+  },
+  {
+    "timestamp": "2025-04-04T20:12:08.125371",
+    "human": "are u there",
+    "ai": "Yes, I'm here! How can I assist you today?"
+  },
+  {
+    "timestamp": "2025-04-04T20:12:14.940339",
+    "human": "what is u r name",
+    "ai": "My name is Tryambakam! How can I assist you today, Nithya Santhosh?"
+  }
+]

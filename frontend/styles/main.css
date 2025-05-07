@@ -1,0 +1,655 @@
+/* Main CSS for Tryambakam Intelligence System - Level 89 Animations */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+/* Global Styles with Advanced Transitions */
+* {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Custom Streamlit Theme - Futuristic Dark */
+.main {
+    background: linear-gradient(135deg, #0a0e17 0%, #1a1f2c 100%);
+    color: #e0f7ff;
+    position: relative;
+    overflow: hidden;
+}
+
+.main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 204, 255, 0.03) 0%, rgba(0, 0, 0, 0) 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.stApp {
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Header Styling with Advanced Glow */
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(90deg, #00ccff, #00ffcc, #00ccff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 8s ease infinite;
+    text-shadow: 0 0 15px rgba(0, 204, 255, 0.7);
+    position: relative;
+}
+
+h1::after, h2::after, h3::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    filter: blur(8px);
+    opacity: 0.7;
+}
+
+h1 {
+    animation: gradientText 8s ease infinite, floatText 6s ease-in-out infinite;
+}
+
+/* Sidebar Styling - Holographic Effect */
+.css-1d391kg, .css-1lcbmhc {
+    background: linear-gradient(180deg, #171b26 0%, #0c0f16 100%);
+    border-right: 1px solid rgba(0, 204, 255, 0.1);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Styling - Neon Effect */
+.stButton > button {
+    background: rgba(14, 22, 40, 0.7);
+    color: #00ccff;
+    border: 1px solid rgba(0, 204, 255, 0.5);
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.3), inset 0 0 5px rgba(0, 204, 255, 0.2);
+}
+
+.stButton > button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 204, 255, 0.2), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.stButton > button:hover {
+    background: rgba(0, 204, 255, 0.2);
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 204, 255, 0.4), 0 0 20px rgba(0, 204, 255, 0.4);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.stButton > button:hover::before {
+    left: 100%;
+}
+
+.stButton > button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 10px rgba(0, 204, 255, 0.3);
+}
+
+/* Chat Message Styling - Holographic Cards */
+.css-1offfwp, div[data-testid="stChatMessage"] {
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    animation: fadeInUp 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* User Message - Cyberpunk Style */
+div[data-testid="stChatMessage"][data-is-user="true"] {
+    background: linear-gradient(135deg, rgba(44, 52, 84, 0.8) 0%, rgba(28, 36, 65, 0.8) 100%);
+    border-left: 3px solid #00ccff;
+}
+
+div[data-testid="stChatMessage"][data-is-user="true"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 48%, rgba(0, 204, 255, 0.1) 50%, transparent 52%);
+    background-size: 200% 200%;
+    animation: scanline 4s linear infinite;
+    pointer-events: none;
+}
+
+/* AI Message - Futuristic Style */
+div[data-testid="stChatMessage"]:not([data-is-user="true"]) {
+    background: linear-gradient(135deg, rgba(30, 33, 48, 0.8) 0%, rgba(20, 23, 38, 0.8) 100%);
+    border-left: 3px solid #ff00cc;
+}
+
+div[data-testid="stChatMessage"]:not([data-is-user="true"])::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 48%, rgba(255, 0, 204, 0.1) 50%, transparent 52%);
+    background-size: 200% 200%;
+    animation: scanline 4s linear infinite reverse;
+    pointer-events: none;
+}
+
+/* Input Box Styling - Holographic Input */
+.stTextInput > div > div > input {
+    background: rgba(30, 33, 48, 0.5);
+    color: #e0f7ff;
+    border: 1px solid rgba(0, 204, 255, 0.3);
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.1), inset 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.stTextInput > div > div > input:focus {
+    background: rgba(30, 33, 48, 0.7);
+    border-color: rgba(0, 204, 255, 0.7);
+    box-shadow: 0 0 15px rgba(0, 204, 255, 0.3), inset 0 0 5px rgba(0, 204, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Advanced Animations */
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes floatText {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    50% {
+        transform: scale(1.05);
+        filter: brightness(1.2);
+    }
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+@keyframes scanline {
+    0% {
+        background-position: 200% 200%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+/* AI Brain Animation - Holographic Brain */
+.ai-brain {
+    width: 200px;
+    height: 200px;
+    margin: 2rem auto;
+    background-image: url('https://i.imgur.com/JXgwTYZ.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    animation: pulse 3s infinite;
+    filter: drop-shadow(0 0 15px rgba(0, 204, 255, 0.7));
+}
+
+.ai-brain::before, .ai-brain::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-repeat: inherit;
+    filter: blur(10px) hue-rotate(45deg);
+    opacity: 0.5;
+    animation: pulse 3s infinite reverse;
+}
+
+.ai-brain::after {
+    filter: blur(20px) hue-rotate(90deg);
+    opacity: 0.3;
+    animation-delay: 1.5s;
+}
+
+/* Memory Lane Indicators - Glowing Orbs */
+.memory-lane-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    position: relative;
+}
+
+.memory-lane-indicator::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    background: inherit;
+    filter: blur(8px);
+    opacity: 0.5;
+    z-index: -1;
+    animation: pulse 2s infinite;
+}
+
+.health-indicator {
+    background: radial-gradient(circle at 30% 30%, #00ffaa, #00cc66);
+    box-shadow: 0 0 10px #00cc66, 0 0 20px rgba(0, 204, 102, 0.5);
+}
+
+.work-indicator {
+    background: radial-gradient(circle at 30% 30%, #ffcc00, #ff9900);
+    box-shadow: 0 0 10px #ff9900, 0 0 20px rgba(255, 153, 0, 0.5);
+}
+
+.journal-indicator {
+    background: radial-gradient(circle at 30% 30%, #ff66ff, #cc00ff);
+    box-shadow: 0 0 10px #cc00ff, 0 0 20px rgba(204, 0, 255, 0.5);
+}
+
+/* Loading Animation - Energy Pulse */
+.loading-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    height: 40px;
+    position: relative;
+}
+
+.loading-animation::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ccff, transparent);
+    animation: loadingLine 2s infinite;
+}
+
+.loading-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin: 0 8px;
+    background: radial-gradient(circle at 30% 30%, #00eeff, #0088ff);
+    position: relative;
+    animation: loadingDot 1.5s infinite ease-in-out;
+}
+
+.loading-dot::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: inherit;
+    border-radius: 50%;
+    filter: blur(8px);
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.loading-dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.loading-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes loadingDot {
+    0%, 100% {
+        transform: scale(0.5) translateY(0);
+        filter: brightness(0.7);
+    }
+    50% {
+        transform: scale(1.2) translateY(-10px);
+        filter: brightness(1.3);
+    }
+}
+
+@keyframes loadingLine {
+    0% {
+        transform: scaleX(0.1);
+        opacity: 0;
+    }
+    50% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scaleX(0.1);
+        opacity: 0;
+    }
+}
+
+/* Expert Cards - Holographic Panels */
+.expert-card, .mode-card, .feature-card {
+    background: linear-gradient(135deg, rgba(30, 33, 48, 0.7) 0%, rgba(20, 23, 38, 0.7) 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border-left: 3px solid #00ccff;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 204, 255, 0.2);
+}
+
+.expert-card::before, .mode-card::before, .feature-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(0, 204, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    animation: holographicShine 6s linear infinite;
+    pointer-events: none;
+}
+
+.expert-card:hover, .mode-card:hover, .feature-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 204, 255, 0.4);
+    border-color: #00eeff;
+}
+
+.expert-card:hover::after, .mode-card:hover::after, .feature-card:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgba(0, 204, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: inset 0 0 10px rgba(0, 204, 255, 0.2);
+    pointer-events: none;
+    animation: borderPulse 2s infinite;
+}
+
+@keyframes holographicShine {
+    0% {
+        top: -50%;
+        left: -50%;
+    }
+    100% {
+        top: 150%;
+        left: 150%;
+    }
+}
+
+@keyframes borderPulse {
+    0%, 100% {
+        border-color: rgba(0, 204, 255, 0.3);
+    }
+    50% {
+        border-color: rgba(0, 204, 255, 0.7);
+    }
+}
+
+/* Vision Analysis Results - Data Visualization */
+.analysis-result {
+    background: linear-gradient(135deg, rgba(30, 33, 48, 0.7) 0%, rgba(20, 23, 38, 0.7) 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border-left: 3px solid #ff00cc;
+    animation: fadeInUp 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 0, 204, 0.2);
+}
+
+.analysis-result::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #ff00cc, #00ccff, #ff00cc);
+    background-size: 200% 100%;
+    animation: gradientBorder 3s linear infinite;
+}
+
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+/* Status Cards - Futuristic Indicators */
+.status-card {
+    background: linear-gradient(135deg, rgba(30, 33, 48, 0.7) 0%, rgba(20, 23, 38, 0.7) 100%);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.status-card h4 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #e0f7ff;
+}
+
+.status-active, .status-inactive {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.status-active {
+    background: rgba(0, 204, 102, 0.2);
+    color: #00ffaa;
+    border: 1px solid rgba(0, 204, 102, 0.3);
+    box-shadow: 0 0 10px rgba(0, 204, 102, 0.3);
+}
+
+.status-active::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00ffaa;
+    margin-right: 8px;
+    animation: pulse 2s infinite;
+}
+
+.status-inactive {
+    background: rgba(255, 77, 77, 0.2);
+    color: #ff7777;
+    border: 1px solid rgba(255, 77, 77, 0.3);
+    box-shadow: 0 0 10px rgba(255, 77, 77, 0.3);
+}
+
+.status-inactive::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff7777;
+    margin-right: 8px;
+}
+
+/* Welcome Container - Intro Animation */
+.welcome-container {
+    text-align: center;
+    margin: 2rem 0;
+    animation: fadeInUp 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.welcome-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.welcome-footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-top: 1px solid rgba(0, 204, 255, 0.2);
+    animation: fadeInUp 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(30, 33, 48, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00ccff, #0088ff);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #00eeff, #00aaff);
+}
+
+/* Data Visualization Elements */
+.data-chart {
+    position: relative;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: 12px;
+    background: rgba(20, 23, 38, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.data-chart::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent 48%, rgba(0, 204, 255, 0.05) 50%, transparent 52%);
+    background-size: 200% 200%;
+    animation: scanline 4s linear infinite;
+    pointer-events: none;
+}
+
+/* Neural Network Animation */
+.neural-network {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    opacity: 0.1;
+    pointer-events: none;
+} 

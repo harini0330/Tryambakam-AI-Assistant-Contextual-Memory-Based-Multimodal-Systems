@@ -1,0 +1,20 @@
+tryambakam/
+├── backend/
+│   ├── api.py             # Flask API endpoints
+│   ├── mark1.py           # Core intelligence system
+│   ├── intelligence_experts.py
+│   ├── voice_interface.py
+│   └── vision_processor.py
+├── frontend/
+│   ├── index.html         # Main page
+│   ├── css/
+│   │   └── style.css      # Main styles
+│   ├── js/
+│   │   ├── main.js        # Core functionality
+│   │   ├── chat.js        # Chat interface
+│   │   ├── experts.js     # Experts interface
+│   │   └── vision.js      # Vision capabilities
+│   └── assets/
+│       └── images/
+├── requirements.txt
+└── server.py              # Flask server 

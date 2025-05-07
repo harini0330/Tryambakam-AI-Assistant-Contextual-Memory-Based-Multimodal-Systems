@@ -1,0 +1,446 @@
+/* Enhanced Home Page Styles with Animations */
+
+/* Main container styling */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+    min-height: 100%;
+    overflow-y: auto;
+}
+
+/* Animated Background */
+.animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Neural Network Animation */
+.neural-network {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.node {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    left: var(--x);
+    top: var(--y);
+    opacity: 0.7;
+    box-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    animation: pulse 3s infinite ease-in-out var(--delay);
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+}
+
+/* Pulse Rings Animation */
+.pulse-rings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pulse-ring {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(10, 132, 255, 0.3);
+    border-radius: 50%;
+    animation: ringPulse 6s infinite ease-out var(--delay);
+}
+
+@keyframes ringPulse {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+/* Data Stream Animation */
+.data-stream {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.data-particle {
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background: var(--primary-color);
+    opacity: 0.7;
+    animation: dataFlow 8s infinite linear var(--delay);
+    transform-origin: center;
+}
+
+@keyframes dataFlow {
+    0% {
+        top: -5%;
+        left: calc(10% + (80% * var(--delay) / 2.1));
+        height: 10px;
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.7;
+    }
+    100% {
+        top: 105%;
+        left: calc(10% + (80% * var(--delay) / 2.1));
+        height: 20px;
+        opacity: 0;
+    }
+}
+
+/* Welcome Header Styling */
+.welcome-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.welcome-logo {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Brain Animation */
+.brain-animation {
+    position: relative;
+    display: inline-block;
+}
+
+.brain-animation i {
+    font-size: 5rem;
+    color: var(--primary-color);
+    animation: brainPulse 3s infinite ease-in-out;
+}
+
+@keyframes brainPulse {
+    0%, 100% {
+        color: var(--primary-color);
+        text-shadow: 0 0 20px rgba(10, 132, 255, 0.5);
+    }
+    50% {
+        color: #5e5ce6;
+        text-shadow: 0 0 30px rgba(94, 92, 230, 0.7);
+    }
+}
+
+.synapse-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.synapse {
+    position: absolute;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+    height: 2px;
+    width: 30px;
+    opacity: 0;
+    animation: synapseFlash 5s infinite;
+}
+
+.synapse:nth-child(1) {
+    top: 30%;
+    left: -20px;
+    transform: rotate(-30deg);
+    animation-delay: 0.5s;
+}
+
+.synapse:nth-child(2) {
+    top: 20%;
+    right: -20px;
+    transform: rotate(30deg);
+    animation-delay: 1s;
+}
+
+.synapse:nth-child(3) {
+    top: 50%;
+    left: -25px;
+    transform: rotate(-15deg);
+    animation-delay: 1.5s;
+}
+
+.synapse:nth-child(4) {
+    top: 60%;
+    right: -25px;
+    transform: rotate(15deg);
+    animation-delay: 2s;
+}
+
+.synapse:nth-child(5) {
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+    animation-delay: 2.5s;
+}
+
+@keyframes synapseFlash {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Glitch Text Effect */
+.glitch-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    position: relative;
+    animation: glitchText 5s infinite;
+}
+
+@keyframes glitchText {
+    0%, 100% {
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 5px rgba(10, 132, 255, 0.5);
+    }
+    33% {
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 2px 0 5px rgba(255, 0, 0, 0.5), -2px 0 5px rgba(0, 255, 255, 0.5);
+    }
+    66% {
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), -2px 0 5px rgba(255, 0, 0, 0.5), 2px 0 5px rgba(0, 255, 255, 0.5);
+    }
+}
+
+/* Typing Text Effect */
+.typing-text {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--primary-color);
+    width: 0;
+    animation: typing 4s steps(50) 1s forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--primary-color); }
+}
+
+/* Features Grid Styling */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 50px;
+}
+
+/* Feature Card Styling */
+.feature-card {
+    background: linear-gradient(145deg, rgba(30, 30, 30, 0.8), rgba(20, 20, 20, 0.8));
+    border-radius: 15px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    animation: cardAppear 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+.feature-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-icon i {
+    animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.feature-content {
+    position: relative;
+    z-index: 2;
+}
+
+.feature-card h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.feature-link {
+    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.feature-link:after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.feature-link:hover {
+    color: var(--accent-color);
+}
+
+.feature-link:hover:after {
+    width: 100%;
+}
+
+.feature-link i {
+    transition: transform 0.3s ease;
+}
+
+.feature-link:hover i {
+    transform: translateX(5px);
+}
+
+/* Card Glow Effect */
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(10, 132, 255, 0.1), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.feature-card:hover .card-glow {
+    opacity: 1;
+    animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .welcome-header {
+        margin-bottom: 40px;
+    }
+    
+    .glitch-text {
+        font-size: 2rem;
+    }
+    
+    .typing-text {
+        font-size: 1rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .brain-animation i {
+        font-size: 3.5rem;
+    }
+}
+
+/* Ensure the main content area is scrollable */
+.main-content {
+    overflow-y: auto !important;
+    height: 100vh;
+    position: relative;
+} 

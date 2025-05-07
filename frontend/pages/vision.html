@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Intelligence | Tryambakam</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/vision.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Universal Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>TRYAMBAKAM</span>
+                </div>
+                <button class="toggle-btn" id="sidebar-toggle">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+                <li><a href="general.html"><i class="fas fa-comments"></i><span>General</span></a></li>
+                <li><a href="overall.html"><i class="fas fa-brain"></i><span>Overall</span></a></li>
+                <li><a href="memory.html"><i class="fas fa-database"></i><span>Memory</span></a></li>
+                <li><a href="experts.html"><i class="fas fa-user-md"></i><span>Experts</span></a></li>
+                <li><a href="vision.html" class="active"><i class="fas fa-eye"></i><span>Vision</span></a></li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="content-header">
+                <h1>Vision Intelligence</h1>
+                <p>Upload images or use your webcam to interact with visual understanding capabilities.</p>
+            </header>
+            
+            <!-- Vision Area -->
+            <div class="vision-area">
+                <!-- Image Input Options - Prominently positioned at the top -->
+                <div class="image-input-options">
+                    <div class="input-option" id="upload-image-btn">
+                        <div class="option-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <span>Upload Image</span>
+                    </div>
+                    <div class="input-option" id="webcam-btn">
+                        <div class="option-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <span>Use Webcam</span>
+                    </div>
+                </div>
+                
+                <div class="vision-display">
+                    <div class="image-container" id="image-container">
+                        <div class="placeholder-message">
+                            <div class="placeholder-icon"><i class="fas fa-eye"></i></div>
+                            <h2>No Image Selected</h2>
+                            <p>Upload an image or use your webcam to begin.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="webcam-container" id="webcam-container" style="display: none;">
+                        <video id="webcam" autoplay playsinline></video>
+                        <button id="capture-btn" class="btn"><i class="fas fa-camera"></i> Capture</button>
+                    </div>
+                </div>
+                
+                <!-- Quick Analysis Options -->
+                <div class="quick-analysis-options">
+                    <button class="analysis-btn" data-prompt="Describe this image in detail"><i class="fas fa-info-circle"></i> Describe</button>
+                    <button class="analysis-btn" data-prompt="Identify all objects in this image"><i class="fas fa-search"></i> Identify Objects</button>
+                    <button class="analysis-btn" data-prompt="What text can you see in this image? Transcribe it completely."><i class="fas fa-font"></i> Extract Text</button>
+                    <button class="analysis-btn" data-prompt="Analyze the emotions and mood in this image"><i class="fas fa-smile"></i> Analyze Mood</button>
+                </div>
+                
+                <!-- Custom Prompt Container -->
+                <div class="custom-prompt-container">
+                    <div class="custom-prompt-header">
+                        <h3>Custom Analysis</h3>
+                        <p>Ask your own specific question about the image</p>
+                    </div>
+                    <div class="chat-input-container">
+                        <textarea id="vision-input" class="chat-input" placeholder="Ask anything about the image..."></textarea>
+                        <button id="send-vision-btn" class="btn send-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Chat Messages Container -->
+                <div class="vision-chat">
+                    <div class="chat-messages" id="vision-messages">
+                        <!-- Messages will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Image upload modal -->
+    <div class="modal" id="upload-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upload Image</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="upload-form">
+                    <div class="form-group">
+                        <label for="image-input">Select an image to upload:</label>
+                        <input type="file" id="image-input" accept="image/*">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn cancel-btn">Cancel</button>
+                        <button type="submit" class="btn">Upload</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/vision.js"></script>
+</body>
+</html> 

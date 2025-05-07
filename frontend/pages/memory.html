@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Lanes | Tryambakam</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/memory.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Universal Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>TRYAMBAKAM</span>
+                </div>
+                <button class="toggle-btn" id="sidebar-toggle">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+                <li><a href="general.html"><i class="fas fa-comments"></i><span>General</span></a></li>
+                <li><a href="overall.html"><i class="fas fa-brain"></i><span>Overall</span></a></li>
+                <li><a href="memory.html" class="active"><i class="fas fa-database"></i><span>Memory</span></a></li>
+                <li><a href="experts.html"><i class="fas fa-user-md"></i><span>Experts</span></a></li>
+                <li><a href="vision.html"><i class="fas fa-eye"></i><span>Vision</span></a></li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="content-header">
+                <h1>Memory Lanes</h1>
+                <p>View and access information stored in your memory lanes.</p>
+            </header>
+            
+            <!-- Memory Filters with Clear Buttons -->
+            <div class="memory-actions">
+                <button class="lane-filter-btn active" data-lane="all">All Memories</button>
+                <button class="lane-filter-btn" data-lane="health">Health</button>
+                <button class="lane-filter-btn" data-lane="work">Work</button>
+                <button class="lane-filter-btn" data-lane="journal">Journal</button>
+                <button class="clear-memory-btn" data-lane="current"><i class="fas fa-trash"></i> Clear</button>
+            </div>
+            
+            <!-- Confirmation Dialog -->
+            <div class="confirmation-dialog" id="confirmation-dialog">
+                <div class="confirmation-content">
+                    <h3 class="confirmation-title">Clear Memory Lane?</h3>
+                    <p class="confirmation-message">Are you sure you want to clear all memories from this lane? This action cannot be undone.</p>
+                    <div class="confirmation-buttons">
+                        <button class="cancel-btn" id="cancel-clear">Cancel</button>
+                        <button class="confirm-btn" id="confirm-clear">Yes, Clear</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Memory Container -->
+            <div id="memory-container" class="memory-container">
+                <!-- Memories will be populated by JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/memory-storage.js"></script>
+    <script src="../js/memory.js"></script>
+</body>
+</html> 

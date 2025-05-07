@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overall Intelligence | Tryambakam</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/overall.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Universal Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>TRYAMBAKAM</span>
+                </div>
+                <button class="toggle-btn" id="sidebar-toggle">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            
+            <ul class="nav-menu">
+                <li>
+                    <a href="../index.html" id="nav-home">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="general.html" id="nav-general">
+                        <i class="fas fa-comments"></i>
+                        <span>General</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="overall.html" id="nav-overall" class="active">
+                        <i class="fas fa-brain"></i>
+                        <span>Overall</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="memory.html" id="nav-memory">
+                        <i class="fas fa-database"></i>
+                        <span>Memory</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="experts.html" id="nav-experts">
+                        <i class="fas fa-user-md"></i>
+                        <span>Experts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="vision.html" id="nav-vision">
+                        <i class="fas fa-eye"></i>
+                        <span>Vision</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="content-header">
+                <h1>Overall Intelligence</h1>
+                <p>Interact with Tryambakam's core intelligence system that automatically categorizes and stores information in appropriate memory lanes.</p>
+            </header>
+            
+            <!-- Overall Intelligence Area -->
+            <div class="overall-area">
+                <!-- Memory Lanes Section -->
+                <div class="memory-lanes">
+                    <div class="memory-indicator health" data-lane="health">
+                        <i class="fas fa-heartbeat"></i>
+                        <span>Health</span>
+                    </div>
+                    <div class="memory-indicator work" data-lane="work">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Work</span>
+                    </div>
+                    <div class="memory-indicator journal" data-lane="journal">
+                        <i class="fas fa-book"></i>
+                        <span>Journal</span>
+                    </div>
+                </div>
+                
+                <!-- Overall Chat Container -->
+                <div class="overall-container">
+                    <div class="overall-messages" id="overall-messages">
+                        <!-- Messages will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="overall-input-container">
+                        <textarea id="overall-input" placeholder="Type your message here..."></textarea>
+                        <button id="send-overall-btn" class="btn send-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/memory-storage.js"></script>
+    <script src="../js/overall.js"></script>
+</body>
+</html> 

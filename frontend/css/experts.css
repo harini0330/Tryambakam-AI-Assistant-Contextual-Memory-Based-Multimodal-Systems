@@ -1,0 +1,431 @@
+/* Experts Page Styles */
+.experts-container {
+    display: flex;
+    height: calc(100vh - 160px);
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.experts-sidebar {
+    width: 350px;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.experts-sidebar h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.experts-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    list-style: none;
+}
+
+.experts-list li {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    background-color: rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.experts-list li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.experts-list li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.experts-list li:hover:before {
+    opacity: 1;
+}
+
+.experts-list li.active {
+    background-color: rgba(10, 132, 255, 0.2);
+}
+
+.experts-list li.active:before {
+    opacity: 1;
+}
+
+.experts-list li strong {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+}
+
+.experts-list li p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.expert-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.expert-header {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.expert-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+}
+
+.expert-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.expert-input-container {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 15px;
+}
+
+#expert-input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    resize: none;
+    height: 50px;
+}
+
+#expert-input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 15px rgba(10, 132, 255, 0.3);
+}
+
+#send-expert-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expert-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-left: 10px;
+    background-color: var(--primary-color);
+}
+
+.expert-badge i {
+    margin-right: 5px;
+}
+
+.expert-welcome {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--text-secondary);
+}
+
+.expert-welcome i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+.expert-welcome h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 10px;
+}
+
+/* Experts Page Specific Styles */
+
+.experts-area {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.experts-sidebar {
+    width: 300px;
+    border-right: 1px solid #222;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.expert-item {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.expert-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.expert-item.active {
+    border-left: 3px solid var(--primary-color);
+    background-color: #252525;
+}
+
+.expert-item h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.expert-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.expert-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.expert-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #222;
+}
+
+.expert-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.expert-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+    gap: 15px;
+}
+
+.expert-icon {
+    font-size: 5rem;
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .experts-sidebar {
+        width: 250px;
+    }
+}
+
+@media (max-width: 576px) {
+    .experts-area {
+        flex-direction: column;
+    }
+    
+    .experts-sidebar {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+/* Add styles for the experts sidebar toggle button */
+.experts-sidebar-toggle {
+    position: absolute;
+    top: 50%;
+    left: 580px; /* Position it at the right edge of the sidebar */
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0 50% 50% 0;
+    width: 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000; /* Higher z-index to ensure it's visible */
+    transition: all 0.3s ease;
+}
+
+.experts-sidebar-toggle i {
+    transition: transform 0.3s ease;
+}
+
+/* Add styles for collapsed experts sidebar */
+.experts-area.sidebar-hidden .experts-sidebar {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.experts-area.sidebar-hidden .expert-chat {
+    width: 100%;
+}
+
+.experts-area.sidebar-hidden .experts-sidebar-toggle {
+    left: 0;
+}
+
+.experts-area.sidebar-hidden .experts-sidebar-toggle i {
+    transform: rotate(180deg);
+}
+
+/* Update message styling for proper alignment */
+.message-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    max-width: 80%;
+}
+
+.user-container {
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.ai-container {
+    margin-right: auto;
+}
+
+.user-message .message-content {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 12px 12px 0 12px;
+}
+
+.ai-message .message-content {
+    background-color: #2a2a2a;
+    border-radius: 12px 12px 12px 0;
+}
+
+.message-content {
+    padding: 12px 15px;
+    border-radius: 12px;
+}
+
+.message-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-message .message-icon {
+    background-color: var(--primary-color);
+}
+
+/* Add toggle switch styles */
+.memory-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2a2a2a;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.toggle-label {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Update expert header to include toggle */
+.expert-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+} 

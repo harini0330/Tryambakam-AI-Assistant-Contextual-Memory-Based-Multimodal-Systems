@@ -1,0 +1,473 @@
+/* Overall Intelligence Page Styles */
+.overall-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 30px;
+}
+
+.overall-header {
+    text-align: center;
+    padding: 20px;
+}
+
+.overall-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.overall-header p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.overall-chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    min-height: 500px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.welcome-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.welcome-message h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 10px;
+}
+
+.welcome-message p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.chat-input-container {
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    gap: 15px;
+}
+
+#overall-input {
+    flex: 1;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    resize: none;
+    height: 50px;
+}
+
+#overall-input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 15px rgba(10, 132, 255, 0.3);
+}
+
+#send-overall-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.memory-status {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.memory-status h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.memory-indicators {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.memory-indicator {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.indicator-icon {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.indicator-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.indicator-bar {
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.indicator-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+/* Message styling for Overall Intelligence */
+.message {
+    display: flex;
+    margin-bottom: 20px;
+    max-width: 80%;
+}
+
+.user-message {
+    margin-left: auto;
+    flex-direction: row-reverse;
+}
+
+.ai-message {
+    margin-right: auto;
+}
+
+.message-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    overflow: hidden;
+}
+
+.user-message .message-icon {
+    background-color: var(--primary-color);
+}
+
+.ai-message .message-icon {
+    background-color: var(--accent-color);
+}
+
+.message-icon i {
+    font-size: 1.2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.message-content {
+    padding: 12px 16px;
+    border-radius: 18px;
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.user-message .message-content {
+    background-color: var(--primary-color);
+    color: white;
+    border-top-right-radius: 4px;
+}
+
+.ai-message .message-content {
+    background-color: #2a2a2a;
+    border-top-left-radius: 4px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.memory-indicator.active .indicator-icon {
+    animation: pulse 1s infinite;
+    color: var(--accent-color);
+}
+
+.content-header p {
+    margin: 10px 0 0;
+    color: var(--text-secondary);
+}
+
+.overall-area {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    flex: 1;
+    overflow: auto;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1;
+    min-height: 400px;
+}
+
+.welcome-message {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-secondary);
+}
+
+.welcome-icon {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.welcome-message h2 {
+    margin: 0 0 15px 0;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+}
+
+.welcome-message p {
+    margin: 0;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.memory-status {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.memory-status h3 {
+    margin: 0 0 20px 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.memory-indicators {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.memory-indicator {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.indicator-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(10, 132, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.indicator-label {
+    width: 80px;
+    font-size: 1rem;
+}
+
+.indicator-bar {
+    flex: 1;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.indicator-progress {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .memory-indicator {
+        flex-wrap: wrap;
+    }
+    
+    .indicator-bar {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
+
+/* Memory lane indicators */
+.memory-lanes {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+}
+
+.memory-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.memory-indicator:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 1;
+}
+
+.memory-indicator.active {
+    background-color: rgba(10, 132, 255, 0.2);
+    opacity: 1;
+}
+
+.memory-indicator i {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.memory-indicator.health i {
+    color: var(--success-color);
+}
+
+.memory-indicator.work i {
+    color: var(--primary-color);
+}
+
+.memory-indicator.journal i {
+    color: var(--warning-color);
+}
+
+/* Memory tags in messages */
+.memory-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.memory-tag {
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.memory-health {
+    background-color: rgba(48, 209, 88, 0.2);
+    color: var(--success-color);
+}
+
+.memory-work {
+    background-color: rgba(10, 132, 255, 0.2);
+    color: var(--primary-color);
+}
+
+.memory-journal {
+    background-color: rgba(255, 214, 10, 0.2);
+    color: var(--warning-color);
+}
+
+/* Overall chat styling */
+.overall-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.overall-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.overall-input-container {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #222;
+}
+
+.overall-input-container textarea {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    border: 1px solid #333;
+    color: var(--text-primary);
+    resize: none;
+    min-height: 50px;
+    max-height: 150px;
+}
+
+.overall-input-container button {
+    margin-left: 10px;
+} 

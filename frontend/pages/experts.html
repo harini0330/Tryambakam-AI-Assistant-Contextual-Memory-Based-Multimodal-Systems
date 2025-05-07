@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence Experts | Tryambakam</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/experts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Universal Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>TRYAMBAKAM</span>
+                </div>
+                <button class="toggle-btn" id="sidebar-toggle">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+            
+            <ul class="nav-menu">
+                <li>
+                    <a href="../index.html" id="nav-home">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="general.html" id="nav-general">
+                        <i class="fas fa-comments"></i>
+                        <span>General</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="overall.html" id="nav-overall">
+                        <i class="fas fa-brain"></i>
+                        <span>Overall</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="memory.html" id="nav-memory">
+                        <i class="fas fa-database"></i>
+                        <span>Memory</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="experts.html" id="nav-experts" class="active">
+                        <i class="fas fa-user-md"></i>
+                        <span>Experts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="vision.html" id="nav-vision">
+                        <i class="fas fa-eye"></i>
+                        <span>Vision</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="content-header">
+                <h1>Intelligence Experts</h1>
+            </header>
+            
+            <!-- Experts Area -->
+            <div class="experts-area">
+                <!-- Experts Sidebar -->
+                <div class="experts-sidebar">
+                    <div class="expert-item active">
+                        <h3>Dr. Tryambakam</h3>
+                        <p>You are Dr. Tryambakam, a medical expert with extensive healthcare knowledge. You provide accurate m...</p>
+                    </div>
+                    
+                    <div class="expert-item">
+                        <h3>Professor Tryambakam</h3>
+                        <p>You are Professor Tryambakam, an educational expert across multiple disciplines. You excel at explai...</p>
+                    </div>
+                </div>
+                
+                <!-- Expert Chat -->
+                <div class="expert-chat">
+                    <div class="expert-header">
+                        <h2>Select an Expert</h2>
+                        <div class="memory-toggle">
+                            <label class="switch">
+                                <input type="checkbox" id="memory-lane-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="toggle-label">Memory Lane Access</span>
+                        </div>
+                    </div>
+                    
+                    <div class="expert-content">
+                        <div class="expert-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-container">
+                        <textarea id="expert-input" placeholder="Type your message here..."></textarea>
+                        <button id="send-expert-btn" class="btn send-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/experts.js"></script>
+</body>
+</html> 

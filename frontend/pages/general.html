@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Intelligence | Tryambakam</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Universal Sidebar -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>TRYAMBAKAM</span>
+                </div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li>
+                    <a href="../index.html" id="nav-home">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="general.html" id="nav-general" class="active">
+                        <i class="fas fa-comments"></i>
+                        <span>General</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="overall.html" id="nav-overall">
+                        <i class="fas fa-brain"></i>
+                        <span>Overall</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="memory.html" id="nav-memory">
+                        <i class="fas fa-database"></i>
+                        <span>Memory</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="experts.html" id="nav-experts">
+                        <i class="fas fa-user-md"></i>
+                        <span>Experts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="vision.html" id="nav-vision">
+                        <i class="fas fa-eye"></i>
+                        <span>Vision</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Move toggle button to the bottom -->
+            <button class="toggle-btn" id="sidebar-toggle">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="content-header">
+                <h1>General Intelligence</h1>
+                <button id="new-chat-btn" class="btn"><i class="fas fa-plus"></i> New Chat</button>
+            </header>
+            
+            <!-- Chat Area -->
+            <div class="chat-area">
+                <!-- Chat Sidebar -->
+                <div class="chat-sidebar">
+                    <div class="chat-item active" data-chat-id="general-chat">
+                        <h3>General Chat</h3>
+                        <p>How can I help you today?</p>
+                    </div>
+                    
+                    <div class="chat-item" data-chat-id="project-planning">
+                        <h3>Project Planning</h3>
+                        <p>Let's discuss your upcoming project...</p>
+                    </div>
+                </div>
+                
+                <!-- Chat Main -->
+                <div class="chat-main">
+                    <div class="chat-messages" id="chat-messages">
+                        <!-- Messages will be populated by JavaScript -->
+                    </div>
+                    
+                    <div class="chat-input-container">
+                        <textarea id="chat-input" placeholder="Type your message here..."></textarea>
+                        <button id="send-btn" class="btn send-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- New Chat Modal -->
+    <div class="modal" id="new-chat-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>New Chat</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="new-chat-form">
+                    <div class="form-group">
+                        <label for="chat-title">Chat Title</label>
+                        <input type="text" id="chat-title" placeholder="Enter a title for your chat">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn cancel-btn">Cancel</button>
+                        <button type="submit" class="btn">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/sidebar.js"></script>
+    <script src="../js/general.js"></script>
+
+    <!-- Update the chat item template in the JavaScript section -->
+    <script id="chat-item-template" type="text/template">
+        <div class="chat-item" data-id="{{id}}">
+            <div class="chat-item-content">
+                <i class="fas fa-comments"></i>
+                <span class="chat-title">{{title}}</span>
+            </div>
+            <div class="chat-item-actions">
+                <button class="delete-chat-btn" title="Delete chat">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </div>
+    </script>
+</body>
+</html> 
